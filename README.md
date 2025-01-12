@@ -23,5 +23,5 @@ tg_chat_id = os.getenv('TG_CHAT_ID')
 ## How to launch
 To run the script, you need to enter it into the console according to this example:
 ```
-python tg_bot.py
+python main.py
 ```
