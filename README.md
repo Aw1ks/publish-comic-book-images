@@ -15,11 +15,7 @@ TG_CHAT_ID=the secret key that you received
 ```
 ## Environment variables
 Environment variables are key—value pairs that determine the settings and behavior of the operating system and programs. You can read more here [More about Environment Variables](https://habr.com/ru/companies/gnivc/articles/792082/)
-The variables accept the `API token` and `chat ID` from the bot father from the file`.env` using the [os](https://docs.python.org/3/library/os.html) library using the method:`.getenv`
-```
-tg_bot_token = os.getenv('TG_BOT_TOKEN')
-tg_chat_id = os.getenv('TG_CHAT_ID')
-```
+The variables accept the `API token` and `chat ID` from the [bot father](https://core.telegram.org/bots/tutorial) from the file`.env` using the [os](https://docs.python.org/3/library/os.html) library using the method:`.environ`.
 ## How to launch
 To run the script, you need to enter it into the console according to this example:
 ```
