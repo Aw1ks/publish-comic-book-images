@@ -10,8 +10,8 @@ pip install -r requirements.txt
 ```
 To save the data from prying eyes, we will create an .env file in which we will place: `tg_bot_token` and `tg_chat_id`. Let's do it this way:
 ```
-TG_BOT_TOKEN = 'the secret key that you received'
-TG_CHAT_ID = 'the secret key that you received'
+TG_BOT_TOKEN=the secret key that you received
+TG_CHAT_ID=the secret key that you received
 ```
 ## Environment variables
 Environment variables are key—value pairs that determine the settings and behavior of the operating system and programs. You can read more here [More about Environment Variables](https://habr.com/ru/companies/gnivc/articles/792082/)
