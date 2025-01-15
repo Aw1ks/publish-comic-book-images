@@ -1,7 +1,7 @@
 # publish-comic-book-images
 In this project, photos of the [comic](https://xkcd.com/info.0.json) are downloaded and published in the telegram channel.
 ## How to install 
-This project uses libraries such as: [os](https://docs.python.org/3/library/os.html), [dotenv](https://betterdatascience-page.pages.dev/python-dotenv/), [requests](https://python-scripts.com/requests?ysclid=lyr2i4f3us982315000), [asyncio](https://docs.python.org/3/library/asyncio.html), [random](https://docs.python.org/3/library/random.html) and [telegram](https://core.telegram.org/bots/api#available-methods).
+This project uses libraries such as: [os](https://docs.python.org/3/library/os.html), [dotenv](https://betterdatascience-page.pages.dev/python-dotenv/), [requests](https://python-scripts.com/requests?ysclid=lyr2i4f3us982315000), [random](https://docs.python.org/3/library/random.html) and [telegram](https://core.telegram.org/bots/api#available-methods).
 You need to get the bot's API token and also get chat ID of your telegram channrl  using [bot father](https://core.telegram.org/bots/tutorial).
 
 Python3 should already be installed. Use `pip` (or `pip3`, there is a conflict with Python2) to install dependencies:
