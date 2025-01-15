@@ -1,10 +1,7 @@
 import requests
 import os
-import asyncio
-
 import random
-
-from telegram import Bot
+import telegram
 from dotenv import load_dotenv
 
 
@@ -37,25 +34,29 @@ def get_comic_image(comic_link):
     return filename
 
 
-async def send_message(tg_bot_token, tg_chat_id, filename, text):
-    bot = Bot(token=tg_bot_token)    
-    await bot.send_photo(chat_id=tg_chat_id, photo=filename, caption=text)
+def send_message(tg_bot_token, tg_chat_id, filename, comic_text):
+    bot = telegram.Bot(token=tg_bot_token)
+    try:
+        bot.send_photo(chat_id=tg_chat_id, photo=open(filename, 'rb'), caption=comic_text)
+        print("Комикс успешно отправлен!")
+    except telegram.error.TelegramError as e:
+        print(f"Ошибка при отправке сообщения: {e}")
 
 
 def main():
     load_dotenv()
 
-    tg_bot_token = os.environ['TG_BOT_TOKEN']
-    tg_chat_id = os.environ['TG_CHAT_ID']
-
-    asyncio.run(send_message(tg_bot_token, tg_chat_id, filename, text))
+    tg_bot_token = os.environ.get('TG_BOT_TOKEN')
+    tg_chat_id = os.environ.get('TG_CHAT_ID')
 
     try:
         comic_link = get_link_of_the_random_comic()
         filename = get_comic_image(comic_link)
-        text = comic_link['alt']
+        comic_text = comic_link['alt'] 
+        send_message(tg_bot_token, tg_chat_id, filename, comic_text)
     finally:
-        os.remove(filename)
+        if os.path.exists(filename):
+            os.remove(filename)
 
 
 if __name__ == "__main__":
