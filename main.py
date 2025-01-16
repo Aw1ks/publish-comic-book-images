@@ -36,11 +36,7 @@ def get_comic_image(comic_link):
 
 def send_message(tg_bot_token, tg_chat_id, filename, comic_text):
     bot = telegram.Bot(token=tg_bot_token)
-    try:
-        bot.send_photo(chat_id=tg_chat_id, photo=open(filename, 'rb'), caption=comic_text)
-        print("Комикс успешно отправлен!")
-    except telegram.error.TelegramError as e:
-        print(f"Ошибка при отправке сообщения: {e}")
+    bot.send_photo(chat_id=tg_chat_id, photo=open(filename, 'rb'), caption=comic_text)
 
 
 def main():
